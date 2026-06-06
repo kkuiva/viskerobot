@@ -9,7 +9,8 @@ Riistvara: koostöörobot X-ARM 7, UFACTORY X-ARM kontroller ja 2 sõrmega haara
 Hardware: cobot X-ARM 7, UFACTORY X-ARM controller and 2 finger gripper. In the demo, the object being thrown is a plastic cube with the length of 32 mm and the goal is a cardboard cup with the outer diameter of 75 mm and height 80 mm. 
 
 Tarkvara / software: 
-1. Ubuntu 24.04 - juhend / guide
-2. ROS2 Jazzy - juhend / guide
-3. xArm ROS2 package - juhend / guide
+1. Ubuntu 24.04 - juhend / guide - https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview
+2. ROS2 Jazzy - juhend / guide - https://docs.ros.org/en/jazzy/Installation.html
+3. xArm ROS2 package - juhend (pt. 4) / guide (ch. 4) - https://github.com/xArm-Developer/xarm_ros2/tree/jazzy
 
+# Demo kasutamine / Using the demo
