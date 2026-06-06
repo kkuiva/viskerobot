@@ -16,7 +16,7 @@ Tarkvara / software:
 
 
 # Demo kasutamine / Using the demo
-Demode paketi lisamine alammoodulina:
+Demode paketi lisamine alammoodulina / Adding the package as a submodule:
 ```bash
 git submodule add https://github.com/kkuiva/viskerobot
 ```
