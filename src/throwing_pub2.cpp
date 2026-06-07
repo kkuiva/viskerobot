@@ -25,7 +25,7 @@ public:
   XArmApiDemo()
   : Node("xarm_api_demo")
   { //declaring robot model and dof
-    hw_ns = this->declare_parameter<std::string>("hw_ns", "xarm"); //renamed both by removing _
+    hw_ns = this->declare_parameter<std::string>("hw_ns", "xarm");
     dof = this->declare_parameter<int>("dof", 7);
 
     //service clients used in controlling the robot:
