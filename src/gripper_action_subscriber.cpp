@@ -13,10 +13,6 @@
 //message type used for sending desired gripper position
 #include "std_msgs/msg/float32.hpp"
 
-//renamed client_ptr_ to gripper_action_client, if it breaks, change back
-//changed some of GripperCommand to gripper_command for consistency, hopefully all the right ones got changed and the other ones left alone
-//renamed GoalHandleGripper to goal_handler
-
 class GripperMoveClient : public rclcpp::Node
 {
 public: //defines variables to simplify text in further commands
@@ -75,8 +71,7 @@ public: //defines variables to simplify text in further commands
 private:
   //defines types for variables gripper_action_client and gripper_subscription
   rclcpp_action::Client<gripper_command>::SharedPtr gripper_action_client;
-  //rclcpp::TimerBase::SharedPtr timer_; <- if it don't work, put this back, else delete
-  rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr gripper_subscription; //renamed this from gripper_subscription_ to gripper_subscription
+  rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr gripper_subscription;
 };
 
 //handles node creation, spinning and stopping
