@@ -25,7 +25,7 @@ public:
   XArmApiDemo()
   : Node("xarm_api_demo")
   { //declaring robot model and dof
-    hw_ns = this->declare_parameter<std::string>("hw_ns", "xarm"); //renamed both by removing _
+    hw_ns = this->declare_parameter<std::string>("hw_ns", "xarm");
     dof = this->declare_parameter<int>("dof", 7);
 
     //service clients used in controlling the robot:
@@ -48,7 +48,7 @@ public:
     cart_pos_1 = { 348.3, 224.1, 7, PI, 0.0, 0.0 };
 
     //publisher for the desired gripper position
-    gripper_publisher = this->create_publisher<std_msgs::msg::Float32>("gripper_moving_call", 10); //renamed to remove _
+    gripper_publisher = this->create_publisher<std_msgs::msg::Float32>("gripper_moving_call", 10);
   }
 
   //initializing the robot
