@@ -32,12 +32,12 @@ public:
   XArmApiDemo()
   : Node("xarm_api_demo")
   { //declaring robot model and dof
-    hw_ns = this->declare_parameter<std::string>("hw_ns", "xarm"); //renamed both by removing _
+    hw_ns = this->declare_parameter<std::string>("hw_ns", "xarm");
     dof = this->declare_parameter<int>("dof", 7);
 
     //service clients used in controlling the robot:
     //enabling the robot to move, setting mode and state, sending joint and cartesian movement commands
-    motion_enable_client = this->create_client<xarm_msgs::srv::SetInt16ById>("/" + hw_ns + "/motion_enable"); //renamed all to remove _
+    motion_enable_client = this->create_client<xarm_msgs::srv::SetInt16ById>("/" + hw_ns + "/motion_enable");
     set_mode_client = this->create_client<xarm_msgs::srv::SetInt16>("/" + hw_ns + "/set_mode");
     set_state_client = this->create_client<xarm_msgs::srv::SetInt16>("/" + hw_ns + "/set_state");
     move_joint_client = this->create_client<xarm_msgs::srv::MoveJoint>("/" + hw_ns + "/set_servo_angle");
@@ -46,7 +46,7 @@ public:
     //robot poses used in the program:
     //home (and throwing initial) position, pick approach and throwing final position
     //the angle needs to be in rad, so the format x * PI/180 can be used to insert the angle, where x is the angle in deg
-    joint_pos_1 = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }; //renamed all to remove _
+    joint_pos_1 = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
     joint_pos_2 = {30.2 * PI/180.0, 22 * PI/180.0, 2.1 * PI/180.0, 40.1 * PI/180.0, -2.6 * PI/180.0, 18.1 * PI/180.0, 34.7 * PI/180.0 };
     joint_pos_3 = { 0.0, 0.0, 0.0, PI/2, 0.0, 0.0, 0.0 };
 
@@ -55,7 +55,7 @@ public:
     cart_pos_1 = { 348.3, 224.1, 7, PI, 0.0, 0.0 };
 
     //publisher for the desired gripper position
-    gripper_publisher = this->create_publisher<std_msgs::msg::Float32>("gripper_moving_call", 10); //renamed to remove _
+    gripper_publisher = this->create_publisher<std_msgs::msg::Float32>("gripper_moving_call", 10);
   }
 
   //initializing the robot
@@ -209,7 +209,7 @@ private:
     float linear_speed = sqrt((dist * dist * g) / ((dist * sin(2*release_angle)) - (2 * y * cos(release_angle) * cos(release_angle))));
 
     //adding extra speed due to the friction between the gripper and cube increasing the actual speed needed 
-    linear_speed = linear_speed + 0.23; //experimental
+    linear_speed = linear_speed + 0.23;
 
     //converting the linear speed to angular speed 
     float throw_speed = linear_speed / throw_radius;
